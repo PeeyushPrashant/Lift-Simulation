@@ -1,0 +1,146 @@
+body {
+  display: flex;
+  margin: 0;
+}
+.main_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_container {
+  width: 350px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid black;
+}
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+}
+.input {
+  width: 100%;
+  border: 1px solid gray;
+}
+.submit_button {
+  width: 90%;
+  height: 25px;
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}
+
+/* building css*/
+
+.building_view {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.building {
+  width: 80%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.floor {
+  display: flex;
+  flex: 1;
+  height: 90%;
+  border-top: 1px solid black;
+  justify-content: space-between;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: 100%;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.action_btn {
+  cursor: pointer;
+}
+.lifts_container {
+  display: flex;
+  height: 100%;
+  width: 70%;
+  justify-content: space-around;
+}
+.lift {
+  position: relative;
+  height: 100%;
+  width: 100px;
+  background-color: aqua;
+}
+.door {
+  width: 50%;
+  height: 100%;
+  background-color: whitesmoke;
+  position: absolute;
+  transition: transform 2.5s ease-in-out;
+  border: 0;
+}
+.left {
+  transform-origin: right;
+}
+
+.right {
+  right: 0;
+  transform-origin: left;
+}
+
+.door.open {
+  transform: scaleX(0);
+}
+
+/*responsive*/
+@media only screen and (max-width: 950px) {
+  .lift {
+    width: 50px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .building {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .form_container {
+    width: 90%;
+  }
+  .building {
+    width: 100%;
+  }
+  .wrapper {
+    width: 20%;
+  }
+  .floor {
+    height: 50%;
+  }
+  .lifts_container {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    justify-content: space-around;
+  }
+  .lift {
+    width: 30px;
+  }
+}
