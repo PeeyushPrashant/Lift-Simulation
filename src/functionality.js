@@ -8,12 +8,16 @@ let liftRequestQueue = [];
 let maxFloor;
 
 const submitHandler = (e) => {
-  e.preventDefault();
-  formContainer.classList.add("hidden");
-  buildingView.classList.remove("hidden");
-  maxFloor = Number(floorInput.value);
-  generateFloorsAndLifts(Number(floorInput.value), Number(liftInput.value));
-  storeLiftsData();
+  if (Number(floorInput.value) < Number(liftInput.value))
+    alert("Lifts should be less than no. of floors");
+  else {
+    e.preventDefault();
+    formContainer.classList.add("hidden");
+    buildingView.classList.remove("hidden");
+    maxFloor = Number(floorInput.value);
+    generateFloorsAndLifts(Number(floorInput.value), Number(liftInput.value));
+    storeLiftsData();
+  }
 };
 
 const goBack = () => {
