@@ -42,32 +42,27 @@ body {
 .building_view {
   position: absolute;
   top: 50px;
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
+
 .building {
-  width: 80%;
-  height: 100%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
 .floor {
   display: flex;
-  flex: 1;
-  height: 90%;
   border-top: 1px solid black;
-  justify-content: space-between;
+  gap: 2rem;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 10%;
-  height: 100%;
+  width: 4rem;
   gap: 3px;
   align-items: center;
   justify-content: center;
@@ -77,15 +72,16 @@ body {
 }
 .lifts_container {
   display: flex;
-  height: 100%;
-  width: 70%;
   justify-content: space-around;
+  gap: 1rem;
+  height: 5rem;
 }
 .lift {
   position: relative;
   height: 100%;
   width: 100px;
   background-color: aqua;
+  z-index: 10;
 }
 .door {
   width: 50%;
@@ -129,18 +125,13 @@ body {
     width: 100%;
   }
   .wrapper {
-    width: 20%;
+    width: 3rem;
   }
-  .floor {
-    height: 50%;
-  }
+
   .lifts_container {
-    display: flex;
-    height: 100%;
-    width: 80%;
-    justify-content: space-around;
+    height: 4rem;
   }
   .lift {
-    width: 30px;
+    width: 60px;
   }
 }

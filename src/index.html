@@ -12,32 +12,17 @@
       <form class="form_container" onsubmit="submitHandler(event)">
         <div class="input_container">
           <span>Enter no. of floors</span>
-          <input
-            type="number"
-            class="input"
-            id="#floor"
-            min="2"
-            max="10"
-            required
-          />
+          <input type="number" class="input" id="#floor" min="2" required />
         </div>
         <div class="input_container">
           <span>Enter no. of lifts</span>
-          <input
-            type="number"
-            class="input"
-            id="#lift"
-            min="1"
-            max="5"
-            required
-          />
+          <input type="number" class="input" id="#lift" min="1" required />
         </div>
         <button class="submit_button" type="submit">Submit</button>
       </form>
     </div>
 
     <div class="building_view hidden">
-      <button onclick="goBack()" class="action_btn">Go Back</button>
       <div class="building"></div>
     </div>
 
