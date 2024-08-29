@@ -88,7 +88,7 @@ body {
   height: 100%;
   background-color: whitesmoke;
   position: absolute;
-  transition: transform 2.5s ease-in-out;
+  transition: transform 2.5s linear;
   border: 0;
 }
 .left {

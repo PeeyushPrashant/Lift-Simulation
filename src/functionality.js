@@ -29,7 +29,7 @@ const goBack = () => {
 };
 
 const generateFloorsAndLifts = (floorInput, liftInput) => {
-  for (let floorIndex = floorInput; floorIndex >= 0; floorIndex--) {
+  for (let floorIndex = floorInput; floorIndex >= 1; floorIndex--) {
     let floorElement = document.createElement("div");
     floorElement.classList.add("floor");
     floorElement.setAttribute("floor", floorIndex);
@@ -50,8 +50,9 @@ const generateFloorsAndLifts = (floorInput, liftInput) => {
     up_btn.onclick = (event) => processQueue(event);
     down_btn.onclick = (event) => processQueue(event);
 
-    if (floorIndex != floorInput) btn_wrapper.appendChild(up_btn);
-    if (floorIndex != 0) btn_wrapper.appendChild(down_btn);
+    if (floorIndex != floorInput || floorInput === 1)
+      btn_wrapper.appendChild(up_btn);
+    if (floorIndex != 1) btn_wrapper.appendChild(down_btn);
 
     let floorLabelWrapper = document.createElement("div");
     let floorLabel = document.createElement("h5");
@@ -63,7 +64,7 @@ const generateFloorsAndLifts = (floorInput, liftInput) => {
     let liftsContainer = document.createElement("div");
     liftsContainer.classList.add("lifts_container");
 
-    if (floorIndex == 0) {
+    if (floorIndex == 1) {
       for (let liftIndex = 0; liftIndex < liftInput; liftIndex++) {
         let liftElement = document.createElement("div");
         liftElement.classList.add("lift");
@@ -90,7 +91,7 @@ const storeLiftsData = () => {
   for (let i = 0; i < allLifts.length; i++) {
     liftsData.push({
       lift: allLifts[i],
-      floor: 0,
+      floor: 1,
       isMoving: false,
     });
   }
@@ -166,11 +167,9 @@ const toggleLiftDoor = (lift) => {
 };
 
 const moveLift = (differenceBetweenFloors, destinationFloor, lift) => {
-  if (destinationFloor === 0 || destinationFloor === maxFloor) return;
-
   const liftHeight = lift.firstElementChild.offsetHeight;
   lift.style.transform = `translateY(-${
-    destinationFloor * (liftHeight + 1)
+    (destinationFloor - 1) * (liftHeight + 1)
   }px)`;
-  lift.style.transition = `transform ${2 * differenceBetweenFloors}s ease`;
+  lift.style.transition = `transform ${2 * differenceBetweenFloors}s linear`;
 };
