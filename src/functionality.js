@@ -128,6 +128,12 @@ const updateLiftData = (nearestLiftElement, isMoving, floor) => {
 
 const processRequest = () => {
   if (liftRequestQueue.length === 0) return;
+  if (
+    liftsData.find(
+      (ele) => ele.isMoving && ele.floor === liftRequestQueue[0].floor
+    )
+  )
+    return;
 
   let nearestLiftElement = nearestLift(liftRequestQueue[0].floor);
 
